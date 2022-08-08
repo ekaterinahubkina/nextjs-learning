@@ -1,0 +1,9 @@
+@import '../../../styles/variables';
+
+.footer {
+    @include center-section;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: 1px solid rebeccapurple;
+}
