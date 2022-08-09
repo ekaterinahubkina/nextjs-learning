@@ -25,11 +25,22 @@
     background-image: url(../../.././../../../public/images/twitter-icon.svg);
 }
 
+.fb,
+.insta,
+.twitter {
+    transition: all .4s ease-in-out;
+
+    &:hover {
+        filter: brightness(0) saturate(100%) invert(2%) sepia(14%) saturate(5%) hue-rotate(317deg) brightness(95%) contrast(86%);
+    }
+}
+
 @media screen and (max-width: 767px) {
     .container {
         justify-content: center;
         gap: 32px;
     }
+
     .link {
         width: 40px;
         height: 40px;
