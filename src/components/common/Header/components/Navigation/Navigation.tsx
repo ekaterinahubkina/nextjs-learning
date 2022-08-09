@@ -1,15 +1,13 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { homedir, type } from 'os';
-import { ReactNode } from 'react';
-import styles from './Navigation.module.scss';
+import styles from './styles.module.scss';
 
 export interface NavigationProps {
     isOpen: boolean
-  }
+}
 
 export const Navigation = ({ isOpen }: NavigationProps) => {
-    const pages = ['home', 'world', 'automobiles', 'real estate', 'finance'];
+
     const navLinks = [
         { title: 'home', path: '/' },
         { title: 'world', path: '/world' },

@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { useState } from 'react';
+import { Navigation } from './components/Navigation/Navigation';
 import logo from '../../../../public/images/logo.svg';
-import { Navigation } from '../Navigation/Navigation';
-import styles from './Header.module.scss';
+import styles from './styles.module.scss';
 
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);

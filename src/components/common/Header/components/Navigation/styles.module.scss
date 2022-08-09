@@ -1,10 +1,12 @@
-@import '../../../styles/variables';
+@import 'styles/mixins';
+@import 'styles/variables';
 
 .navigation {
     list-style: none;
     display: flex;
     gap: 32px;
     margin: 0;
+    padding: 0;
 }
 
 .link {
@@ -22,24 +24,11 @@
 }
 
 .active {
-
     color: $text-color;
     border-bottom: 4px solid $main-color;
 }
 
-@media screen and (max-width: 900px) {
-    .navigation {
-        gap: 20px;
-    }
-
-    .link {
-        font-size: 14px;
-        line-height: 20px;
-    }
-
-}
-
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 767px) {
     .navigation {
         display: none;
         position: absolute;
