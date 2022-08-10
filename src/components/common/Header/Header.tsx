@@ -1,10 +1,11 @@
-import Image from 'next/image';
 import { useState } from 'react';
-import { Navigation } from './components/Navigation/Navigation';
-import logo from '../../../../public/images/logo.svg';
+import { Navigation } from 'components/common/Header/components/Navigation/Navigation';
+import Logo from 'components/common/icons/logo.svg';
+import BurgerIcon from 'components/common/icons/burger/burger-icon.svg';
+import CloseIcon from 'components/common/icons/burger/close-icon.svg';
 import styles from './styles.module.scss';
 
-export const Header = () => {
+export const Header: React.FunctionComponent = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const openMobileMenu = () => {
@@ -13,10 +14,9 @@ export const Header = () => {
 
     return (
         <header className={styles.header}>
-            <Image className={styles.logo} src={logo} alt='logo' />
-            <Navigation isOpen={isOpen}/>
-            <button className={`${styles.burger} ${isOpen && styles.open}`} onClick={openMobileMenu}/>
+            <Logo />
+            <Navigation isOpen={isOpen} />
+            <button className={styles.burger} onClick={openMobileMenu}>{isOpen ? <CloseIcon /> : <BurgerIcon />}</button>
         </header>
-
     )
 }

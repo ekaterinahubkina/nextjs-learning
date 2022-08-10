@@ -6,32 +6,23 @@
 }
 
 .link {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 24px;
     height: 24px;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
-.fb {
-    background-image: url(../../../../../../public/images/fb-icon.svg);
-}
-
-.insta {
-    background-image: url(../.././../../../../public/images/insta-icon.svg);
-}
-
-.twitter {
-    background-image: url(../../.././../../../public/images/twitter-icon.svg);
-}
-
-.fb,
-.insta,
-.twitter {
+.icon {
+    width: 18px;
+    height: 18px;
+    fill: $subtext-color;
     transition: all .4s ease-in-out;
 
     &:hover {
-        filter: brightness(0) saturate(100%) invert(2%) sepia(14%) saturate(5%) hue-rotate(317deg) brightness(95%) contrast(86%);
+        fill: $text-color;
     }
 }
 
@@ -44,6 +35,10 @@
     .link {
         width: 40px;
         height: 40px;
-        background-size: 30px 30px;
+    }
+
+    .icon {
+        width: 30px;
+        height: 30px;
     }
 }

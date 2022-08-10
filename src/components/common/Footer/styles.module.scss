@@ -1,7 +1,6 @@
 @import 'styles/variables';
 @import 'styles/mixins';
 
-
 .footer {
     @include center-section;
     display: flex;
@@ -26,7 +25,6 @@
         align-content: space-between;
         min-height: 332px;
         padding: 20px 0;
-
     }
 
     .copyright {

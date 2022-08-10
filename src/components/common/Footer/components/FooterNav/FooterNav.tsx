@@ -1,10 +1,7 @@
-import Link from 'next/link';
 import styles from './styles.module.scss';
 
-export const FooterNav = () => {
-
+export const FooterNav: React.FunctionComponent = () => {
     const links = ['about us', 'help', 'advertise', 'privacy policy', 'terms of service'];
-
     return (
         <nav>
             <ul className={styles.navigation}>
