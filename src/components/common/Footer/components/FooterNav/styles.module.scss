@@ -4,7 +4,9 @@
 .navigation {
     list-style: none;
     display: flex;
-    gap: 0 32px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px 0;
     padding: 0;
     margin: 0;
 }
@@ -14,10 +16,9 @@
     @include hover;
 }
 
-@media screen and (max-width: 767px) {
+@media (min-width: 768px) {
     .navigation {
-        flex-direction: column;
-        gap: 20px 0;
-        align-items: center;
+        flex-direction: row;
+        gap: 0 32px;
     }
 }

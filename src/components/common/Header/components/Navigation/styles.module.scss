@@ -2,11 +2,20 @@
 @import 'styles/variables';
 
 .navigation {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 15px;
     list-style: none;
+    @include header-shadow;
+}
+
+.open {
     display: flex;
-    gap: 32px;
-    margin: 0;
-    padding: 0;
 }
 
 .link {
@@ -15,7 +24,6 @@
     font-size: 16px;
     line-height: 24px;
     text-transform: capitalize;
-    padding-bottom: 14px;
     transition: all .3s ease-in-out;
 
     &:hover {
@@ -28,32 +36,18 @@
     border-bottom: 4px solid $main-color;
 }
 
-@media screen and (max-width: 767px) {
+@media (min-width: 768px) {
     .navigation {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        z-index: 1;
-        width: 100%;
-        flex-direction: column;
-        padding: 20px 15px;
-        @include header-shadow;
-
-        & li {
-            margin-bottom: 24px;
-
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-        }
+        position: static;
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+        padding: 0;
+        background: none;
+        box-shadow: none;
     }
 
     .active {
-        padding-bottom: 0;
-    }
-
-    .open {
-        display: block;
+        padding-bottom: 14px;
     }
 }

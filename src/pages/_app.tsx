@@ -3,7 +3,8 @@ import type { AppProps } from 'next/app'
 import { Header } from 'components/common/Header/Header'
 import { Footer } from 'components/common/Footer/Footer'
 import { Content } from 'components/common/Content/Content'
-import '../styles/globals.css'
+import 'styles/reset.scss';
+import 'styles/globals.css';
 
 
 function MyApp({ Component, pageProps }: AppProps) {

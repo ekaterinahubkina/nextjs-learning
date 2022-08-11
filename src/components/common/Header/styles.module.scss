@@ -7,12 +7,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 120px;
+    padding: 0 15px;
     @include header-shadow;
 }
 
 .burger {
-    display: none;
+    display: flex;
     width: 28px;
     height: 28px;
     background-color: transparent;
@@ -22,12 +22,12 @@
     align-items: center;
 }
 
-@media screen and (max-width: 767px) {
+@media (min-width: 768px) {
     .header {
-        padding: 0 15px;
+        padding: 0 120px;
     }
 
     .burger {
-        display: flex;
+        display: none;
     }
 }

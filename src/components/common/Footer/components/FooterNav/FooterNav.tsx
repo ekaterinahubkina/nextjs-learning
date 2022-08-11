@@ -1,7 +1,8 @@
 import styles from './styles.module.scss';
 
+const links = ['about us', 'help', 'advertise', 'privacy policy', 'terms of service'];
+
 export const FooterNav: React.FunctionComponent = () => {
-    const links = ['about us', 'help', 'advertise', 'privacy policy', 'terms of service'];
     return (
         <nav>
             <ul className={styles.navigation}>

@@ -1,40 +1,31 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
 import styles from './styles.module.scss';
 
-const cn = classNames.bind(styles);
+const navLinks = [
+    { title: 'home', path: '/' },
+    { title: 'world', path: '/world' },
+    { title: 'automobiles', path: '/automobiles' },
+    { title: 'real\u00A0estate', path: '/real-estate' },
+    { title: 'finance', path: '/finance' },
+]
 
 type Props = {
     isOpen: boolean
 }
 
 export const Navigation: React.FunctionComponent<Props> = ({ isOpen }) => {
-    const navLinks = [
-        { title: 'home', path: '/' },
-        { title: 'world', path: '/world' },
-        { title: 'automobiles', path: '/automobiles' },
-        { title: 'real\u00A0estate', path: '/real-estate' },
-        { title: 'finance', path: '/finance' },
-    ]
     const router = useRouter();
-    const navClassName = cn({
-        navigation: true,
-        open: isOpen,
-    });
-    const linkClassName = (p: String) => {
-        return cn({
-            link: true,
-            active: router.pathname === p,
-        })
-    }
 
     return (
         <nav className={styles.nav}>
-            <ul className={navClassName}>
+            <ul className={classNames(styles.navigation, { [styles.open]: isOpen })}>
                 {navLinks.map(({ title, path }) => (
                     <li key={title}>
-                        <Link href={path}><a className={linkClassName(path)}>{title}</a></Link>
+                        <Link href={path}>
+                            <a className={classNames(styles.link, { [styles.active]: path === router.pathname })}>{title}</a>
+                        </Link>
                     </li>
                 ))}
             </ul>

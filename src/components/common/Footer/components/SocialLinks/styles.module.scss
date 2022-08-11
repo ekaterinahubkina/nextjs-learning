@@ -2,22 +2,21 @@
 
 .container {
     display: flex;
-    gap: 8px;
+    justify-content: center;
+    gap: 32px;
 }
 
 .link {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 24px;
-    height: 24px;
-    background-position: center center;
-    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
 }
 
 .icon {
-    width: 18px;
-    height: 18px;
+    width: 30px;
+    height: 30px;
     fill: $subtext-color;
     transition: all .4s ease-in-out;
 
@@ -26,19 +25,18 @@
     }
 }
 
-@media screen and (max-width: 767px) {
+@media (min-width: 768px) {
     .container {
-        justify-content: center;
-        gap: 32px;
+        gap: 8px;
     }
 
     .link {
-        width: 40px;
-        height: 40px;
+        width: 24px;
+        height: 24px;
     }
 
     .icon {
-        width: 30px;
-        height: 30px;
+        width: 18px;
+        height: 18px;
     }
 }
