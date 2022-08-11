@@ -1,9 +1,11 @@
+import { NewsCardType } from 'models/NewsCardType';
 import Image from 'next/image';
+import { Date } from 'utils/date';
 import styles from './styles.module.scss';
 
-// type Props = {
-//      news?: {}
-// }
+type Props = {
+     news: NewsCardType,
+}
 
 export const NewsCard: React.FunctionComponent<Props> = ({ news }) => {
     return (
@@ -11,13 +13,14 @@ export const NewsCard: React.FunctionComponent<Props> = ({ news }) => {
             <div className={styles.info}>
                 <div className={styles.wrapper}>
                     <div className={styles.section}>{news.section}</div>
-                    <h2 className={styles.title}>{news.title}</h2>
-                    <p className={styles.text}>{news.abstract}</p>
+                    <Date dateString={news.published_date}/>
                 </div>
-                <span className={styles.date}>{news.published_date}</span>
+                <h2 className={styles.title}>{news.title}</h2>
+                <p className={styles.abstract}>{news.abstract}</p>
+
             </div>
             {news.multimedia ?
-                <Image src={news.multimedia[0].url} alt='something' width={100} height={100}></Image>
+                <Image className={styles.image} src={news.multimedia[0].url} alt='something' width={375} height={280} layout='responsive'></Image>
                 : null
             }
         </article>
