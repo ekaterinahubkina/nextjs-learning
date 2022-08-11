@@ -2,11 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
-
-module.exports = nextConfig
-
-module.exports = {
+  images: {
+    domains: ['static01.nyt.com'],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -15,4 +13,17 @@ module.exports = {
 
     return config;
   }
-};
+}
+
+module.exports = nextConfig
+
+// module.exports = {
+//   webpack(config) {
+//     config.module.rules.push({
+//       test: /\.svg$/,
+//       use: ["@svgr/webpack"]
+//     });
+
+//     return config;
+//   }
+// };
