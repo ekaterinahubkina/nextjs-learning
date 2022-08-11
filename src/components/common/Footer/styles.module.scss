@@ -3,10 +3,15 @@
 
 .footer {
     @include center-section;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 64px;
+    display: grid;
+    grid-template-areas:
+        'nav'
+        'social'
+        'copyright';
+    justify-content: center;
+    align-content: space-between;
+    min-height: 332px;
+    padding: 20px 0;
     border-top: 1px solid $separator-color;
     font-weight: 400;
     font-size: 14px;
@@ -14,21 +19,17 @@
     color: $subtext-color;
 }
 
-@media screen and (max-width: 767px) {
-    .footer {
-        display: grid;
-        grid-template-areas:
-            'nav'
-            'social'
-            'copyright';
-        justify-content: center;
-        align-content: space-between;
-        min-height: 332px;
-        padding: 20px 0;
-    }
+.copyright {
+    grid-area: copyright;
+    text-align: center;
+}
 
-    .copyright {
-        grid-area: copyright;
-        text-align: center;
+@media (min-width: 768px) {
+    .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 64px;
+        padding: 0;
     }
 }
