@@ -7,6 +7,6 @@ export const useNews = (path: string, section?: string) => {
     return {
         news: data,
         isLoading: !error && !data,
-        isError: error
+        error
     }
 }

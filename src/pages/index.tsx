@@ -5,11 +5,13 @@ import { NewsCard } from 'components/common/NewsCard/NewsCard';
 
 
 const Home: NextPage = () => {
-  const { news, isLoading, isError } = useNews(process.env.NEXT_PUBLIC_BASE_PATH);
+  const { news, isLoading, error } = useNews(process.env.NEXT_PUBLIC_BASE_PATH);
 
-  if (isLoading) return <div>Loading</div>
-  if (isError) return <div>Error</div>
-
+  if (isLoading) return <div>Loading..</div>
+  if (error) {
+    console.log(error)
+    return <div>{error.info}</div>
+  }
   return (
     <>
       {news.results.map((item: NewsCardType) => (

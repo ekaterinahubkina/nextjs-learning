@@ -2,9 +2,11 @@
 
 .content {
     padding: 20px 0;
+    min-height: calc(100vh - 60px - 332px);
 
     @media (min-width: 768px) {
         padding: 40px 0;
+        min-height: calc(100vh - 60px - 64px);
         @include center-section;
     }
 }
