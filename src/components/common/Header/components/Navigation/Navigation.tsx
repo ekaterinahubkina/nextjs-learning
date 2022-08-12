@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
 
-const navLinks = [
+const NAV_LINKS = [
     { title: 'home', path: '/' },
     { title: 'world', path: '/world' },
     { title: 'automobiles', path: '/automobiles' },
@@ -21,7 +21,7 @@ export const Navigation: React.FunctionComponent<Props> = ({ isOpen }) => {
     return (
         <nav className={styles.nav}>
             <ul className={classNames(styles.navigation, { [styles.open]: isOpen })}>
-                {navLinks.map(({ title, path }) => (
+                {NAV_LINKS.map(({ title, path }) => (
                     <li key={title}>
                         <Link href={path}>
                             <a className={classNames(styles.link, { [styles.active]: path === router.pathname })}>{title}</a>

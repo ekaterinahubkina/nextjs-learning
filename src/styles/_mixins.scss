@@ -4,18 +4,19 @@
 }
 
 @mixin center-section {
-    width: calc(100% - 2*120px);
+    width: calc(100% - 2*15px);
     margin: auto;
 
-    @media screen and (max-width: 767px) {
-        width: calc(100% - 2*15px)
+    @media (min-width: 768px) {
+        width: calc(100% - 2*120px);
     }
 }
 
 @mixin hover {
     transition: all .4s ease-in-out;
     cursor: pointer;
+
     &:hover {
         color: $text-color;
-    }    
+    }
 }
