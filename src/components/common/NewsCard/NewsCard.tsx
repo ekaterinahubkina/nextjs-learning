@@ -1,10 +1,10 @@
-import { NewsCardType } from 'models/NewsCardType';
 import Image from 'next/image';
+import { NewsCardType } from 'models/NewsCardType';
 import { Date } from 'components/common/Date/Date';
 import styles from './styles.module.scss';
 
 type Props = {
-     news: NewsCardType,
+    news: NewsCardType,
 }
 
 export const NewsCard: React.FunctionComponent<Props> = ({ news }) => {
@@ -17,7 +17,6 @@ export const NewsCard: React.FunctionComponent<Props> = ({ news }) => {
                 </div>
                 <h2 className={styles.title}>{news.title}</h2>
                 <p className={styles.abstract}>{news.abstract}</p>
-
             </div>
             {news.multimedia ?
                 <Image className={styles.image} src={news.multimedia[0].url} alt='something' width={375} height={280} layout='responsive'></Image>

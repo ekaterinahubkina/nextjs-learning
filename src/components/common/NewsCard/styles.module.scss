@@ -50,10 +50,6 @@
     border-radius: 4px;
 }
 
-.image {
-    width: 100%;
-}
-
 @media (min-width: 768px) {
     .card {
         position: relative;
@@ -63,6 +59,7 @@
         border-radius: 8px;
         cursor: pointer;
         transition: all .4s ease-in-out;
+
         &:hover {
             background-color: rgba(122, 122, 122, .1)
         }

@@ -7,6 +7,7 @@ type Props = {
 
 export const Date: React.FunctionComponent<Props> = ({ dateString }) => {
     const date = parseISO(dateString);
+
     return (
         <time className={styles.date} dateTime={dateString}>{format(date, 'LLLL d, yyyy, HH:mm')}</time>
     )

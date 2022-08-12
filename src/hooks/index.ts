@@ -1,7 +1,7 @@
 import useSWR from "swr";
-import { fetcher } from 'services';
+import { fetcher } from 'services/fetcher';
 
-export const useNews = (path: string, section?: string) => {
+export const useNews = (path: string | undefined, section?: string) => {
     const { data, error } = useSWR([path, section], fetcher)
 
     return {

@@ -1,5 +1,9 @@
-@media (min-width: 768px) {
-    .date {
+.date {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+
+    @media (min-width: 768px) {
         position: absolute;
         left: 40px;
         bottom: 40px;
