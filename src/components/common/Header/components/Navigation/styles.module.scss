@@ -4,7 +4,7 @@
 .navigation {
     display: none;
     position: absolute;
-    top: 60px;
+    top: $header-height;
     left: 0;
     width: 100%;
     flex-direction: column;

@@ -1,12 +1,13 @@
 @import 'styles/mixins';
+@import'styles/variables';
 
 .content {
     padding: 20px 0;
-    min-height: calc(100vh - 60px - 332px);
+    min-height: calc(100vh - $header-height - $footer-mobile-height);
 
     @media (min-width: 768px) {
         padding: 40px 0;
-        min-height: calc(100vh - 60px - 64px);
+        min-height: calc(100vh - $header-height - $footer-desktop-height);
         @include center-section;
     }
 }

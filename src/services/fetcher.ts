@@ -1,6 +1,8 @@
-export const fetcher = async (path: string, section: string = "home") => {
+import { API_TOKEN, BASE_PATH } from "constants/api";
+
+export const fetcher = async (section: string = "home") => {
   const res = await fetch(
-    `${path}/svc/topstories/v2/${section}.json?api-key=${process.env.NEXT_PUBLIC_API_TOKEN}`
+    `${BASE_PATH}/svc/topstories/v2/${section}.json?api-key=${API_TOKEN}`
   );
   if (!res.ok) {
     throw new Error("An error occurred while fetching the data.");;
