@@ -1,0 +1,53 @@
+@import 'styles/mixins';
+@import 'styles/variables';
+
+.navigation {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 15px;
+    list-style: none;
+    @include header-shadow;
+}
+
+.open {
+    display: flex;
+}
+
+.link {
+    color: $subtext-color;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: capitalize;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        color: $text-color;
+    }
+}
+
+.active {
+    color: $text-color;
+    border-bottom: 4px solid $main-color;
+}
+
+@media (min-width: 768px) {
+    .navigation {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+    }
+
+    .active {
+        padding-bottom: 14px;
+    }
+}

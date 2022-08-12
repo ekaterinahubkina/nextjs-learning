@@ -1,0 +1,33 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.header {
+    position: relative;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    @include header-shadow;
+}
+
+.burger {
+    display: flex;
+    width: 28px;
+    height: 28px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .header {
+        padding: 0 120px;
+    }
+
+    .burger {
+        display: none;
+    }
+}

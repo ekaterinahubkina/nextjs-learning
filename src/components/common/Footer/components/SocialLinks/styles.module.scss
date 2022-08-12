@@ -1,0 +1,42 @@
+@import 'styles/variables';
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    fill: $subtext-color;
+    transition: all .4s ease-in-out;
+
+    &:hover {
+        fill: $text-color;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        gap: 8px;
+    }
+
+    .link {
+        width: 24px;
+        height: 24px;
+    }
+
+    .icon {
+        width: 18px;
+        height: 18px;
+    }
+}
