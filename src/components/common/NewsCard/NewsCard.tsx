@@ -1,6 +1,6 @@
 import { NewsCardType } from 'models/NewsCardType';
 import Image from 'next/image';
-import { Date } from 'utils/date';
+import { Date } from 'components/common/Date/Date';
 import styles from './styles.module.scss';
 
 type Props = {
@@ -13,7 +13,7 @@ export const NewsCard: React.FunctionComponent<Props> = ({ news }) => {
             <div className={styles.info}>
                 <div className={styles.wrapper}>
                     <div className={styles.section}>{news.section}</div>
-                    <Date dateString={news.published_date}/>
+                    <Date dateString={news.published_date} />
                 </div>
                 <h2 className={styles.title}>{news.title}</h2>
                 <p className={styles.abstract}>{news.abstract}</p>

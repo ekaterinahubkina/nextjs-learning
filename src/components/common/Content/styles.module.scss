@@ -2,7 +2,9 @@
 
 .content {
     padding: 20px 0;
+
     @media (min-width: 768px) {
-        padding: 40px 0;        
+        padding: 40px 0;
+        @include center-section;
     }
 }

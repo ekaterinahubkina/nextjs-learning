@@ -1,17 +1,12 @@
 @import 'styles/variables';
 @import 'styles/mixins';
 
-// .card {
-//     display: grid;
-//     grid-template-columns: 1fr 1fr;
-// }
-
 .card {
     min-height: 482px;
     margin-bottom: 20px;
     color: $text-color;
     @include header-shadow;
-    
+
     &:last-of-type {
         margin-bottom: 0;
     }
@@ -39,6 +34,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .section {
     width: 76px;
     height: 26px;
@@ -56,4 +52,23 @@
 
 .image {
     width: 100%;
+}
+
+@media (min-width: 768px) {
+    .card {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 458px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all .4s ease-in-out;
+        &:hover {
+            background-color: rgba(122, 122, 122, .1)
+        }
+    }
+
+    .image {
+        border-radius: 0 8px 8px 0;
+    }
 }
