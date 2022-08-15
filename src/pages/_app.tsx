@@ -2,8 +2,9 @@ import Head from 'next/head'
 import type { AppProps } from 'next/app'
 import { Header } from 'components/common/Header/Header'
 import { Footer } from 'components/common/Footer/Footer'
+import { Content } from 'components/common/Content/Content'
 import 'styles/reset.scss';
-import 'styles/globals.css'
+import 'styles/globals.css';
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -15,11 +16,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Component {...pageProps} />
+      <Content >
+        <Component {...pageProps} />
+      </Content>
       <Footer />
     </>
   )
-
 }
 
 export default MyApp

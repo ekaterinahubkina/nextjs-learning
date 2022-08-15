@@ -1,10 +1,9 @@
 import type { NextPage } from 'next';
+import { NewsList } from 'components/newsList/NewsList';
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <main>Content here</main>
-    </div>
+    <NewsList section='home' />
   )
 }
 

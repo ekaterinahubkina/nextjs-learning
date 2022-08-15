@@ -1,0 +1,71 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.card {
+    min-height: 482px;
+    margin-bottom: 20px;
+    color: $text-color;
+    @include header-shadow;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.info {
+    padding: 20px 15px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    margin: 20px 0 16px;
+}
+
+.abstract {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section {
+    width: 76px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $main-color;
+    color: $background-color;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+    .card {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 458px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all .4s ease-in-out;
+
+        &:hover {
+            background-color: $subtext-color-rgba;
+        }
+    }
+
+    .image {
+        border-radius: 0 8px 8px 0;
+    }
+}
