@@ -8,5 +8,8 @@
 .large {
     font-size: 30px;
     line-height: 38px;
-    margin: 40px 0 16px;
+
+    @media (min-width: 768px) {
+        margin: 40px 0 16px;
+    }
 }
