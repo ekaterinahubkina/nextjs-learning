@@ -61,7 +61,7 @@
         transition: all .4s ease-in-out;
 
         &:hover {
-            background-color: rgba(122, 122, 122, .1)
+            background-color: $subtext-color-rgba;
         }
     }
 
