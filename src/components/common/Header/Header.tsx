@@ -9,14 +9,17 @@ export const Header: React.FunctionComponent = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const openMobileMenu = () => {
-        setIsOpen(!isOpen);
+        setIsOpen(true);
+    }
+    const closeMobileMenu = () => {
+        setIsOpen(false);
     }
 
     return (
         <header className={styles.header}>
             <Logo />
-            <Navigation isOpen={isOpen} />
-            <button className={styles.burger} onClick={openMobileMenu}>{isOpen ? <CloseIcon /> : <BurgerIcon />}</button>
+            <Navigation isOpen={isOpen} close={closeMobileMenu} />
+            <button className={styles.burger} onClick={isOpen ? closeMobileMenu : openMobileMenu}>{isOpen ? <CloseIcon /> : <BurgerIcon />}</button>
         </header>
     )
 }
