@@ -9,4 +9,3 @@ export type Article = {
 export type News = {
     results: Article[];
 }
-
