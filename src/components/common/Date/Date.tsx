@@ -4,13 +4,13 @@ import styles from './styles.module.scss';
 
 type Props = {
     dateString: string,
-    isNewsListPage?: boolean
+    isPositionBottom?: boolean
 }
 
-export const Date: React.FunctionComponent<Props> = ({ dateString, isNewsListPage }) => {
+export const Date: React.FunctionComponent<Props> = ({ dateString, isPositionBottom }) => {
     const date = parseISO(dateString);
 
     return (
-        <time className={classNames(styles.date, { [styles.home]: isNewsListPage })} dateTime={dateString}>{format(date, 'LLLL d, yyyy, HH:mm')}</time>
+        <time className={classNames(styles.date, { [styles.bottom]: isPositionBottom })} dateTime={dateString}>{format(date, 'LLLL d, yyyy, HH:mm')}</time>
     )
 }

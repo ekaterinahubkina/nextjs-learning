@@ -3,10 +3,10 @@ import classNames from 'classnames';
 import styles from './styles.module.scss';
 
 type Props = {
-    isNewsListPage?: boolean,
+    isLarge?: boolean,
     children: ReactNode
 }
 
-export const Title: React.FunctionComponent<Props> = ({ isNewsListPage, children }) => {
-    return <h2 className={classNames(styles.title, { [styles.large]: !isNewsListPage })}>{children}</h2>
+export const Title: React.FunctionComponent<Props> = ({ isLarge, children }) => {
+    return <h2 className={classNames(styles.title, { [styles.large]: isLarge })}>{children}</h2>
 }

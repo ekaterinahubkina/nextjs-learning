@@ -37,7 +37,7 @@ export const NewsArticle: React.FunctionComponent = () => {
                 : null
             }
             <div className={styles.info}>
-                <Title>{article.headline.main}</Title>
+                <Title isLarge>{article.headline.main}</Title>
                 <h5 className={styles.subtitle}>{article.abstract}</h5>
                 <p className={styles.text}>{article.lead_paragraph}</p>
             </div>
