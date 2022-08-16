@@ -1,16 +1,15 @@
 import useSWR from "swr";
-import { fetcher } from "services/fetcher";
-import { NewsCard } from "components/common/NewsCard/NewsCard";
+import { newsFetcher } from "services/fetchers";
+import { NewsCard } from "components/news-list/components/NewsCard/NewsCard";
 import { News } from "models/news";
-import { Error } from "models/error";
 
 type Props = {
     section: string,
     data: News
 }
 
-export const NewsList: React.FunctionComponent<Props> = ({ section, data }) => {
-    // const { data, error } = useSWR<News, Error>(section, fetcher)
+export const NewsList: React.FunctionComponent<Props> = ({ section }) => {
+    const { data, error } = useSWR<News>(section, newsFetcher)
 
     // if (!data && !error) return <div>Loading..</div>
     // if (error) return <div>{error.message}</div>
