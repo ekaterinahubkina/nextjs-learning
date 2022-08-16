@@ -5,14 +5,13 @@ import { News } from "models/news";
 
 type Props = {
     section: string,
-    data: News
 }
 
 export const NewsList: React.FunctionComponent<Props> = ({ section }) => {
     const { data, error } = useSWR<News>(section, newsFetcher)
 
-    // if (!data && !error) return <div>Loading..</div>
-    // if (error) return <div>{error.message}</div>
+    if (!data && !error) return <div>Loading..</div>
+    if (error) return <div>{error.message}</div>
 
     return (
         <>

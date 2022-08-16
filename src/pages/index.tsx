@@ -1,15 +1,10 @@
 import type { NextPage, GetServerSideProps } from 'next';
 import { newsFetcher } from 'services/fetchers';
-import { News } from 'models/news';
 import { NewsList } from 'components/news-list/NewsList';
 
-type Props = {
-  data: News
-}
-
-const Home: NextPage<Props> = ({ data }) => {
+const Home: NextPage = () => {
   return (
-    <NewsList section='home' data={data}/>
+    <NewsList section='home' />
   )
 }
 
@@ -19,7 +14,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const data = await newsFetcher();
   return {
     props: {
-      data
+      fallback: {
+        data
+      }
     }
   }
 }

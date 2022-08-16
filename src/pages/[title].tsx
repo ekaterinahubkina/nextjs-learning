@@ -1,26 +1,8 @@
 import type { GetServerSideProps, NextPage } from 'next';
-import { newsFetcher } from 'services/fetchers';
-import { SWRConfig } from "swr";
-import { News } from 'models/news';
+import { articleFetcher } from 'services/fetchers';
 import { NewsArticle } from 'components/news-article/NewsArticle';
 
-// export const getServerSideProps: GetServerSideProps = async (context) => {
-//   const data = await fetcher();
-//   const article = data.find((el) => el.title === context.query.title);
-//   return {
-//     props: {
-//       fallback: {
-//         '/[title]': article
-//       }
-//     },
-//   }
-// }
-
-type Props = {
-  data: News
-}
-
-const NewsFull: NextPage<Props> = () => {
+const NewsFull: NextPage = () => {
   return (
     <NewsArticle />
   )
@@ -28,11 +10,23 @@ const NewsFull: NextPage<Props> = () => {
 
 export default NewsFull
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const data = await newsFetcher();
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  if (!context.query.url || Array.isArray(context.query.url)) {
+    return {
+      props: {
+        fallback: {
+          error: 'not found'
+        }
+      }
+    }
+  }
+  const { url } = context.query;
+  const data = await articleFetcher(url);
   return {
     props: {
-      data
+      fallback: {
+        data
+      }
     }
   }
 }
