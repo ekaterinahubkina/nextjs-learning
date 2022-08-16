@@ -6,6 +6,7 @@
     position: absolute;
     top: $header-height;
     left: 0;
+    z-index: 1;
     width: 100%;
     flex-direction: column;
     gap: 24px;

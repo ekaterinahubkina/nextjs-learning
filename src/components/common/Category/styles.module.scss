@@ -1,0 +1,17 @@
+@import 'styles/variables';
+
+.category {
+    width: fit-content;
+    height: 26px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $main-color;
+    color: $background-color;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    border-radius: 4px;
+}

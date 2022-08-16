@@ -12,10 +12,11 @@ const NAV_LINKS = [
 ]
 
 type Props = {
-    isOpen: boolean
+    isOpen: boolean,
+    close: () => void
 }
 
-export const Navigation: React.FunctionComponent<Props> = ({ isOpen }) => {
+export const Navigation: React.FunctionComponent<Props> = ({ isOpen, close }) => {
     const router = useRouter();
 
     return (
@@ -24,7 +25,8 @@ export const Navigation: React.FunctionComponent<Props> = ({ isOpen }) => {
                 {NAV_LINKS.map(({ title, path }) => (
                     <li key={title}>
                         <Link href={path}>
-                            <a className={classNames(styles.link, { [styles.active]: path === router.pathname })}>{title}</a>
+                            <a className={classNames(styles.link, { [styles.active]: path === router.pathname })}
+                                onClick={close}>{title}</a>
                         </Link>
                     </li>
                 ))}
