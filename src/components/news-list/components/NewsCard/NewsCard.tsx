@@ -18,9 +18,9 @@ export const NewsCard: React.FunctionComponent<Props> = ({ article }) => {
                     <div className={styles.info}>
                         <div className={styles.wrapper}>
                             <Category>{article.section}</Category>
-                            <Date home dateString={article.published_date} />
+                            <Date isNewsListPage dateString={article.published_date} />
                         </div>
-                        <Title home>{article.title}</Title>
+                        <Title isNewsListPage>{article.title}</Title>
                         <p className={styles.abstract}>{article.abstract}</p>
                     </div>
                     {article.multimedia ?
