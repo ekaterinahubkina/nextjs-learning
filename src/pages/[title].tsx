@@ -11,22 +11,19 @@ const NewsFull: NextPage = () => {
 export default NewsFull
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  if (!context.query.url || Array.isArray(context.query.url)) {
+  const { url } = context.query;
+  console.log(url)
+  if (typeof url === 'string') {
+    const data = await articleFetcher(url);
     return {
       props: {
         fallback: {
-          error: 'not found'
+          data
         }
       }
     }
   }
-  const { url } = context.query;
-  const data = await articleFetcher(url);
   return {
-    props: {
-      fallback: {
-        data
-      }
-    }
+    notFound: true
   }
 }
