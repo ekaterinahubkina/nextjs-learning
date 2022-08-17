@@ -31,7 +31,7 @@ export const NewsArticle: React.FunctionComponent = () => {
                 <Category>{article.section_name}</Category>
                 {article.pub_date && <Date dateString={article.pub_date} />}
             </div>
-            {article.multimedia ?
+            {article.multimedia.length ?
                 <Image className={styles.image} src={`https://static01.nyt.com/${article.multimedia[0].url}`}
                     priority alt='article image' width={375} height={280} layout='responsive'></Image>
                 : null

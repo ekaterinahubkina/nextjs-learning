@@ -4,7 +4,7 @@ import { NewsCard } from "components/news-list/components/NewsCard/NewsCard";
 import { News } from "models/news";
 
 type Props = {
-    section: string
+    section: string,
 }
 
 export const NewsList: React.FunctionComponent<Props> = ({ section }) => {
