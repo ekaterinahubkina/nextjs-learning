@@ -8,7 +8,7 @@ type Props = {
 }
 
 export const NewsList: React.FunctionComponent<Props> = ({ section }) => {
-    const { data, error } = useSWR<News>(section, newsFetcher)
+    const { data, error } = useSWR<News>(section, newsFetcher);
 
     if (!data && !error) return <div>Loading..</div>
     if (error) return <div>{error.message}</div>
