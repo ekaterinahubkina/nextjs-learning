@@ -12,7 +12,7 @@ type Props = {
 
 export const NewsCard: React.FunctionComponent<Props> = ({ article }) => {
     return (
-        <Link href={{ pathname: `/${encodeURIComponent(article.title)}`, query: { url: article.url } }}>
+        <Link href={{ pathname: `/article/${encodeURIComponent(article.title)}`, query: { url: article.url } }}>
             <a className={styles.link}>
                 <article className={styles.card}>
                     <div className={styles.info}>

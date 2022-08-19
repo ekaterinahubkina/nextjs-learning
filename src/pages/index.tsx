@@ -7,7 +7,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {
       fallback: {
-        data
+        'home': data
       }
     }
   }
