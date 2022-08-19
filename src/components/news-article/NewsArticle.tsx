@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import useSWR from "swr";
+import useSWRImmutable from 'swr/immutable'
 import { articleFetcher } from "services/fetchers";
 import { ArticleFull, NewsFull } from "models/news";
 import { Category } from "components/common/Category/Category";
@@ -13,7 +13,7 @@ export const NewsArticle: React.FunctionComponent = () => {
     const [article, setArticle] = useState<ArticleFull | undefined>();
     const router = useRouter();
     const { url } = router.query;
-    const { data, error } = useSWR<NewsFull>(url, articleFetcher);
+    const { data, error } = useSWRImmutable<NewsFull>(url, articleFetcher);
 
     useEffect(() => {
         if (data) {
