@@ -14,6 +14,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 }
 
 const Home: NextPage = () => {
+
   return (
     <NewsList section='home' />
   )
