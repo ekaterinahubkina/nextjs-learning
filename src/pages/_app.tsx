@@ -9,9 +9,8 @@ import 'styles/globals.css';
 
 
 function MyApp({ Component, pageProps }: AppProps) {
-
   return (
-    <SWRConfig value={pageProps.fallback}>
+    <SWRConfig value={{fallback: pageProps.fallback ?? {}}}>
       <>
         <Head>
           <title>Next App</title>
