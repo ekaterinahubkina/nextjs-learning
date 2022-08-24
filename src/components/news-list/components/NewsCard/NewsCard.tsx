@@ -17,18 +17,18 @@ export const NewsCard: React.FunctionComponent<Props> = ({ article }) => {
             <a className={styles.link}>
                 <article className={styles.card}>
                     <div className={styles.info}>
-                        <div className={styles.wrapper}>
+                        {/* <div className={styles.wrapper}>
                             <Category>{article.section}</Category>
                             <Date isPositionBottom dateString={article.published_date} />
                         </div>
                         <Title>{article.title}</Title>
-                        <p className={styles.abstract}>{article.abstract}</p>
+                        <p className={styles.abstract}>{article.abstract}</p> */}
                     </div>
-                    {/* {article.multimedia ?
+                    {article.multimedia ?
                         <Image className={styles.image} src={article.multimedia[0].url} alt='something'
                             width={375} height={280} layout='responsive' priority></Image>
                         : null
-                    } */}
+                    }
                 </article>
             </a>
         </Link>
