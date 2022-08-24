@@ -20,9 +20,9 @@ export const NewsCard: React.FunctionComponent<Props> = ({ article }) => {
                         {/* <div className={styles.wrapper}>
                             <Category>{article.section}</Category>
                             <Date isPositionBottom dateString={article.published_date} />
-                        </div>
+                        </div> */}
                         <Title>{article.title}</Title>
-                        <p className={styles.abstract}>{article.abstract}</p> */}
+                        <p className={styles.abstract}>{article.abstract}</p>
                     </div>
                     {article.multimedia ?
                         <Image className={styles.image} src={article.multimedia[0].url} alt='something'
