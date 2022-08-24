@@ -2,15 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { storiesFetcher } from "services/fetchers";
+import { Stories } from "models/stories";
 import { Category } from "components/common/Category/Category";
 import { Date } from "components/common/Date/Date";
 import { Title } from "components/common/Title/Title";
 import styles from './styles.module.scss';
-import { Stories } from "models/stories";
 
-export const StoriesList: React.FunctionComponent = () => {
-    const { isLoading, data, error } = useQuery<Stories>(['dream-stories'], storiesFetcher);
-    console.log(data);
+type Props = {
+    stories: Stories,
+}
+
+export const StoriesList: React.FunctionComponent<Props> = ({ stories }) => {
+    const { isLoading, data, error } = useQuery<Stories>(['dream-stories'], storiesFetcher,
+        { initialData: stories, refetchOnMount: false, refetchOnWindowFocus: false });
+
     if (isLoading) return <div>Loading...</div>
     if (!data) return <div>Stories not found</div>
     if (error instanceof Error) return <div>{error.message}</div>
@@ -18,7 +23,7 @@ export const StoriesList: React.FunctionComponent = () => {
     return (
         <>
             {data.data.map((item) => (
-                <Link key={item.id} href={{ pathname: `/story/${encodeURIComponent(item.attributes.title)}`, query: { id: item.id} }}>
+                <Link key={item.id} href={{ pathname: `/story/${encodeURIComponent(item.attributes.title)}`, query: { id: item.id } }}>
                     <a className={styles.link}>
                         <article className={styles.card}>
                             <div className={styles.info}>

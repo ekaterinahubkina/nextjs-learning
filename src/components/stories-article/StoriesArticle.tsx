@@ -8,11 +8,14 @@ import { Title } from "components/common/Title/Title";
 import { Date } from "components/common/Date/Date";
 import styles from './styles.module.scss';
 
+type Props = {
+    story: StoryFull,
+    id: string,
+}
 
-export const StoriesArticle: React.FunctionComponent = () => {
-    const router = useRouter();
-    const { id } = router.query;
-    const { isLoading, data, error } = useQuery<StoryFull>(['dream-story', id], () => storyFetcher(id));
+export const StoriesArticle: React.FunctionComponent<Props> = ({ story, id }) => {
+    const { isLoading, data, error } = useQuery<StoryFull>(['dream-story', id], () => storyFetcher(id),
+        { initialData: story, refetchOnMount: false, refetchOnWindowFocus: false });
 
     if (isLoading) return <div>Loading...</div>
     if (!data) return <div>Story not found</div>

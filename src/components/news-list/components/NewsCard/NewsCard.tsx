@@ -5,18 +5,12 @@ import { Date } from 'components/common/Date/Date';
 import { Title } from 'components/common/Title/Title';
 import { Category } from 'components/common/Category/Category';
 import styles from './styles.module.scss';
-import { useEffect, useState } from 'react';
 
 type Props = {
     article: Article,
 }
 
 export const NewsCard: React.FunctionComponent<Props> = ({ article }) => {
-    const [isMounted, setIsMounted] = useState(false);
-
-    useEffect(() => setIsMounted(true), []);
-
-    if (!isMounted) return null;
 
     return (
         <Link href={{ pathname: `/article/${encodeURIComponent(article.title)}`, query: { url: article.url } }}>
@@ -31,8 +25,8 @@ export const NewsCard: React.FunctionComponent<Props> = ({ article }) => {
                         <p className={styles.abstract}>{article.abstract}</p>
                     </div>
                     {article.multimedia ?
-                        <Image className={styles.image} src={article.multimedia[0].url} alt='something' 
-                        width={375} height={280} layout='responsive' priority></Image>
+                        <Image className={styles.image} src={article.multimedia[0].url} alt='something'
+                            width={375} height={280} layout='responsive' priority></Image>
                         : null
                     }
                 </article>

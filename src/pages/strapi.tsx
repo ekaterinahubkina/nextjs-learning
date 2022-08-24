@@ -4,14 +4,30 @@ import {
     QueryClientProvider,
 } from '@tanstack/react-query';
 import { StoriesList } from 'components/stories-list/StoriesList';
+import { storiesFetcher } from 'services/fetchers';
+import { Stories } from 'models/stories';
 
 const queryClient = new QueryClient();
 
-const Strapi: NextPage = () => {
+export const getServerSideProps: GetServerSideProps = async () => {
+    const stories = await queryClient.fetchQuery(['dream-stories'], storiesFetcher);
+
+    return {
+        props: {
+            stories
+        },
+    }
+}
+
+type Props = {
+    stories: Stories
+}
+
+const Strapi: NextPage<Props> = ({ stories }) => {
 
     return (
         <QueryClientProvider client={queryClient}>
-            <StoriesList />
+            <StoriesList stories={stories} />
         </QueryClientProvider>
     )
 }

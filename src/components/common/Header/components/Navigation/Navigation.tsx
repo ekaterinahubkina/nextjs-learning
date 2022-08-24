@@ -9,6 +9,7 @@ const NAV_LINKS = [
     { title: 'automobiles', path: '/automobiles' },
     { title: 'real estate', path: '/realestate' },
     { title: 'science', path: '/science' },
+    { title: 'strapi', path: '/strapi' }
 ]
 
 type Props = {
