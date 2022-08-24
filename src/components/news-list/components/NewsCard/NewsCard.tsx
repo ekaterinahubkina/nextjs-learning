@@ -17,10 +17,10 @@ export const NewsCard: React.FunctionComponent<Props> = ({ article }) => {
             <a className={styles.link}>
                 <article className={styles.card}>
                     <div className={styles.info}>
-                        {/* <div className={styles.wrapper}>
+                        <div className={styles.wrapper}>
                             <Category>{article.section}</Category>
-                            <Date isPositionBottom dateString={article.published_date} />
-                        </div> */}
+                            {/* <Date isPositionBottom dateString={article.published_date} /> */}
+                        </div>
                         <Title>{article.title}</Title>
                         <p className={styles.abstract}>{article.abstract}</p>
                     </div>
