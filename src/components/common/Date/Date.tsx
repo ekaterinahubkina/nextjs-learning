@@ -1,7 +1,7 @@
+import { useEffect, useState } from 'react';
 import { parseISO, format } from 'date-fns';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
-import { useEffect, useState } from 'react';
 
 type Props = {
     dateString: string,
@@ -15,6 +15,7 @@ export const Date: React.FunctionComponent<Props> = ({ dateString, isPositionBot
         const date = parseISO(dateString);
         setDate(date);
     }, [dateString])
+
     if (!date) return null;
 
     return (

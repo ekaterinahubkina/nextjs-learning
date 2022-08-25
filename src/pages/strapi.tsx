@@ -1,33 +1,42 @@
+import { useState } from 'react';
 import type { NextPage, GetServerSideProps } from 'next';
 import {
     QueryClient,
     QueryClientProvider,
+    Hydrate,
+    dehydrate
 } from '@tanstack/react-query';
 import { StoriesList } from 'components/stories-list/StoriesList';
 import { storiesFetcher } from 'services/fetchers';
-import { Stories } from 'models/stories';
-
-const queryClient = new QueryClient();
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const stories = await queryClient.fetchQuery(['dream-stories'], storiesFetcher);
+    const queryClient = new QueryClient();
+    await queryClient.fetchQuery(['dream-stories'], storiesFetcher);
 
     return {
         props: {
-            stories
+            dehydratedState: dehydrate(queryClient),
         },
     }
 }
 
 type Props = {
-    stories: Stories
+    dehydratedState: {
+        queries: {
+            state: {},
+            queryKey: [],
+        }[]
+    },
 }
 
-const Strapi: NextPage<Props> = ({ stories }) => {
+const Strapi: NextPage<Props> = ({ dehydratedState }) => {
+    const [queryClient] = useState(() => new QueryClient())
 
     return (
         <QueryClientProvider client={queryClient}>
-            <StoriesList stories={stories} />
+            <Hydrate state={dehydratedState}>
+                <StoriesList />
+            </Hydrate>
         </QueryClientProvider>
     )
 }

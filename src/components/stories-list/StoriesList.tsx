@@ -8,13 +8,9 @@ import { Date } from "components/common/Date/Date";
 import { Title } from "components/common/Title/Title";
 import styles from './styles.module.scss';
 
-type Props = {
-    stories: Stories,
-}
-
-export const StoriesList: React.FunctionComponent<Props> = ({ stories }) => {
+export const StoriesList: React.FunctionComponent = () => {
     const { isLoading, data, error } = useQuery<Stories>(['dream-stories'], storiesFetcher,
-        { initialData: stories, refetchOnMount: false, refetchOnWindowFocus: false });
+        { refetchOnMount: false, refetchOnWindowFocus: false });
 
     if (isLoading) return <div>Loading...</div>
     if (!data) return <div>Stories not found</div>
