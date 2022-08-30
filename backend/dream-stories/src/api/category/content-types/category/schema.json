@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Category"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "dream_stories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dream-story.dream-story",
+      "mappedBy": "category"
+    }
+  }
+}

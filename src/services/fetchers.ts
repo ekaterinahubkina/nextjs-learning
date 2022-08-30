@@ -20,3 +20,19 @@ export const articleFetcher = async (url: string) => {
   }
   return res.json();
 }
+
+export const storiesFetcher = async () => {
+  const res = await fetch('http://localhost:1337/api/dream-stories?populate=%2A');
+  if (!res.ok) {
+    throw new Error("An error occurred while fetching the data.");
+  }
+  return res.json();
+}
+
+export const storyFetcher = async (id: string) => {
+  const res = await fetch(`http://localhost:1337/api/dream-stories/${id}?populate=%2A`);
+  if (!res.ok) {
+    throw new Error("An error occurred while fetching the data.");
+  }
+  return res.json();
+}

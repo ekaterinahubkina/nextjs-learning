@@ -1,0 +1,55 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.link {
+    display: block;
+    margin-bottom: 20px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.card {
+    min-height: 482px;
+    color: $text-color;
+    @include header-shadow;
+}
+
+.info {
+    padding: 20px 15px;
+}
+
+.abstract {
+    @include text-font-size;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .card {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 458px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all .4s ease-in-out;
+
+        &:hover {
+            background-color: $subtext-color-rgba;
+        }
+    }
+
+    .info {
+        padding: 20px 40px;
+    }
+
+    .image {
+        border-radius: 0 8px 8px 0;
+    }
+}

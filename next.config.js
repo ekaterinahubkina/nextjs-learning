@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["static01.nyt.com"],
+    domains: ["static01.nyt.com", "images.unsplash.com", "localhost"],
   },
   webpack(config) {
     config.module.rules.push({
